@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content>
+    <title>二叉树的非递归算法 | sony的小鼠</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x6811;&amp;#x7684;&amp;#x904D;&amp;#x5386;&amp;#x603B;&amp;#x7ED3;&amp;#xFF1A; &amp;#x5F62;&amp;#x5982;&amp;#x6B64;&amp;#x56FE;&amp;#xFF0C; &amp;#x800C;&amp;#x5728;&amp;#x8BBE;&amp;#x8BA1;&amp;#x975E;&amp;#x9012;&amp;#x5F52;&amp;#x7B97;&amp;#x6CD5;&amp;#x65F6;&amp;#xFF0C;&amp;#x4ED6;&amp;#x768">
+<meta name="keywords" content="树的遍历,非递归算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二叉树的非递归算法">
+<meta property="og:url" content="http://mouseofsony.github.io/all/树的非递归算法/index.html">
+<meta property="og:site_name" content="sony的小鼠">
+<meta property="og:description" content="&amp;#x6811;&amp;#x7684;&amp;#x904D;&amp;#x5386;&amp;#x603B;&amp;#x7ED3;&amp;#xFF1A; &amp;#x5F62;&amp;#x5982;&amp;#x6B64;&amp;#x56FE;&amp;#xFF0C; &amp;#x800C;&amp;#x5728;&amp;#x8BBE;&amp;#x8BA1;&amp;#x975E;&amp;#x9012;&amp;#x5F52;&amp;#x7B97;&amp;#x6CD5;&amp;#x65F6;&amp;#xFF0C;&amp;#x4ED6;&amp;#x768">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://mouseofsony.github.io/image/BinTree/BinTree.PNG">
+<meta property="og:updated_time" content="2020-02-06T07:11:37.299Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二叉树的非递归算法">
+<meta name="twitter:description" content="&amp;#x6811;&amp;#x7684;&amp;#x904D;&amp;#x5386;&amp;#x603B;&amp;#x7ED3;&amp;#xFF1A; &amp;#x5F62;&amp;#x5982;&amp;#x6B64;&amp;#x56FE;&amp;#xFF0C; &amp;#x800C;&amp;#x5728;&amp;#x8BBE;&amp;#x8BA1;&amp;#x975E;&amp;#x9012;&amp;#x5F52;&amp;#x7B97;&amp;#x6CD5;&amp;#x65F6;&amp;#xFF0C;&amp;#x4ED6;&amp;#x768">
+<meta name="twitter:image" content="http://mouseofsony.github.io/image/BinTree/BinTree.PNG">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:",
+  "image": "",
+  "name": "房云捷",
+  "url": "http://mouseofsony.github.io"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>sony的小鼠</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">房云捷</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item">
+        <i class="home icon"></i>
+        HOME
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-树的非递归算法" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    二叉树的非递归算法
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="&#x6811;&#x7684;&#x904D;&#x5386;&#x603B;&#x7ED3;&#xFF1A;"><a href="#&#x6811;&#x7684;&#x904D;&#x5386;&#x603B;&#x7ED3;&#xFF1A;" class="headerlink" title="&#x6811;&#x7684;&#x904D;&#x5386;&#x603B;&#x7ED3;&#xFF1A;"></a>&#x6811;&#x7684;&#x904D;&#x5386;&#x603B;&#x7ED3;&#xFF1A;</h1><p><a class="magnific-img" href="/image/BinTree/BinTree.PNG"><img src="/image/BinTree/BinTree.PNG" alt class="ui centered image"></a></p>
+<p>&#x5F62;&#x5982;&#x6B64;&#x56FE;&#xFF0C;</p>
+<p>&#x800C;&#x5728;&#x8BBE;&#x8BA1;&#x975E;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x65F6;&#xFF0C;&#x4ED6;&#x7684;&#x603B;&#x4F53;&#x601D;&#x8DEF;&#x662F;&#xFF1A;</p>
+<p>1&#x3001;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x628A;&#x4ED6;&#x538B;&#x6808;&#xFF0C;&#x518D;&#x53BB;&#x904D;&#x5386;&#x4ED6;&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x3002;</p>
+<p>2&#x3001;&#x5F53;&#x5DE6;&#x5B50;&#x6811;&#x904D;&#x5386;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x4ECE;&#x6808;&#x9876;&#x5F39;&#x51FA;&#x3002;</p>
+<p>3&#x3001;&#x6309;&#x5176;&#x53C8;&#x6307;&#x9488;&#x518D;&#x53BB;&#x904D;&#x5386;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x5B50;&#x6811;&#x3002;</p>
+<p>&#x800C;&#x6240;&#x8C13;&#x524D;&#x5E8F;&#xFF0C;&#x4E2D;&#x5E8F;&#xFF0C;&#x540E;&#x5E8F;&#x904D;&#x5386;&#x5373;&#x662F;&#x904D;&#x5386;&#x65F6;&#x7B2C;&#x4E00;&#x6B21;&#x78B0;&#x5230;&#x8BBF;&#x95EE;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x78B0;&#x5230;&#x8BBF;&#x95EE;&#xFF0C;&#x7B2C;&#x4E09;&#x6B21;&#x78B0;&#x5230;&#x8BBF;&#x95EE;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x6B21;&#x78B0;&#x5230;&#x8BBF;&#x95EE;&#x5373;&#x662F;&#x5165;&#x6808;&#x65F6;&#x5373;&#x8BBF;&#x95EE;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x78B0;&#x5230;&#x8BBF;&#x95EE;&#x5373;&#x662F;&#x51FA;&#x6808;&#x65F6;&#x8BBF;&#x95EE;&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x540E;&#x5E8F;&#x904D;&#x5386;&#xFF0C;&#x6211;&#x601D;&#x8003;&#x4E86;&#x597D;&#x4E45;&#x59CB;&#x7EC8;&#x65E0;&#x6CD5;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x4F1A;&#x78B0;&#x5230;&#x4E09;&#x6B21;&#xFF0C;&#x540E;&#x67E5;&#x8BE2;&#x8D44;&#x6599;&#x6709;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6B64;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="&#x540E;&#x5E8F;&#x904D;&#x5386;&#x975E;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x4EE3;&#x7801;&#xFF1A;"><a href="#&#x540E;&#x5E8F;&#x904D;&#x5386;&#x975E;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x4EE3;&#x7801;&#xFF1A;" class="headerlink" title="&#x540E;&#x5E8F;&#x904D;&#x5386;&#x975E;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x4EE3;&#x7801;&#xFF1A;"></a>&#x540E;&#x5E8F;&#x904D;&#x5386;&#x975E;&#x9012;&#x5F52;&#x7B97;&#x6CD5;&#x4EE3;&#x7801;&#xFF1A;</h2><pre><code>void BinTreeTraversal(BinTree BT)
+{
+    Bintree T = BT;
+    Stack S = CreateStack(Maxsize);//&#x521B;&#x5EFA;&#x6808;
+     while(T||!isEmpty(S))
+     {
+        while(T)
+        {
+             if(T-&gt;visit==0)
+             {
+                 T-&gt;visit++;
+                 Push(S,T);//&#x7B2C;&#x4E00;&#x6B21;&#x78B0;&#x5230;&#x662F;&#x5165;&#x6808;&#xFF0C;&#x4E0D;&#x8BBF;&#x95EE;
+             }
+             T = T-&gt;left;
+        }
+        //&#x4ECE;&#x6B64;&#x5FAA;&#x73AF;&#x8DF3;&#x51FA;&#x4EE3;&#x8868;&#x7740;&#x5DE6;&#x5B50;&#x6811;&#x904D;&#x5386;&#x7ED3;&#x675F;
+        if(!isEpmty(S))//&#x5982;&#x679C;&#x6808;&#x975E;&#x7A7A;
+        {
+            T = Pop(S);//&#x51FA;&#x6808;
+            if(T-&gt;visit==2)
+            {
+                printf(&quot;%d&quot;,T-&gt;Data);//&#x7B2C;&#x4E09;&#x6B21;&#x78B0;&#x5230;&#xFF0C;&#x5373;&#x8BBF;&#x95EE;
+                T = NULL&#xFF1B;
+            }
+            else
+            {
+                T-&gt;visit++;
+                Push(S,T);//&#x7B2C;&#x4E8C;&#x6B21;&#x5165;&#x6808;&#xFF0C;&#x4E0D;&#x8BBF;&#x95EE;
+                T = T-&gt;Right; 
+            }
+           }
+    }
+}</code></pre><h3 id="&#x4EE3;&#x7801;&#x5206;&#x6790;"><a href="#&#x4EE3;&#x7801;&#x5206;&#x6790;" class="headerlink" title="&#x4EE3;&#x7801;&#x5206;&#x6790;:"></a>&#x4EE3;&#x7801;&#x5206;&#x6790;:</h3><p>&#x6B64;&#x6BB5;&#x4EE3;&#x7801;&#x5B9E;&#x9645;&#x4E0A;&#x4E0E;&#x524D;&#x5E8F;&#xFF0C;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x6CA1;&#x4EC0;&#x4E48;&#x5DEE;&#x522B;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x52A0;&#x5165;&#x4E86;&#x4E00;&#x4E2A;visit&#x53D8;&#x91CF;&#xFF0C;&#x7528;&#x6765;&#x67E5;&#x8BE2;&#x7A76;&#x7ADF;&#x662F;&#x7B2C;&#x51E0;&#x6B21;&#x78B0;&#x5230;&#x6B64;&#x7ED3;&#x70B9;&#x3002;&#x7B2C;&#x4E00;&#x6B21;&#x78B0;&#x5230;&#x662F;&#x5165;&#x6808;&#x65F6;&#xFF0C;visit&#x76F8;&#x5E94;&#x5730;&#x52A0;&#x4E00;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x78B0;&#x5230;&#x662F;&#x51FA;&#x6808;&#x65F6;&#xFF0C;visit&#x4E5F;&#x76F8;&#x5E94;&#x5730;&#x52A0;&#x4E00;&#x3002;&#x4E4B;&#x540E;&#x5C06;&#x5176;&#x518D;&#x6B21;&#x5165;&#x6808;&#xFF0C;&#x518D;&#x6B21;&#x51FA;&#x6808;&#x65F6;&#xFF0C;&#x4ED6;&#x7684;visit&#x7684;&#x503C;&#x5C31;&#x4E3A;2&#x4E86;&#xFF0C;&#x6B64;&#x65F6;&#x8BBF;&#x95EE;&#x5373;&#x662F;&#x78B0;&#x5230;&#x7684;&#x7B2C;&#x4E09;&#x6B21;&#x4E86;&#x3002;</p>
+<h4 id="&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF1A;"><a href="#&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF1A;" class="headerlink" title="&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF1A;"></a>&#x4E2A;&#x4EBA;&#x7406;&#x89E3;&#xFF1A;</h4><p>&#x6211;&#x662F;&#x8FD9;&#x822C;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x78B0;&#x5230;&#x662F;&#x5165;&#x6808;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B21;&#x78B0;&#x5230;&#x662F;&#x4E0D;&#x52A8;&#x4ED6;&#xFF08;&#x5373;&#x8FDB;&#x884C;&#x51FA;&#x6808;&#xFF0C;&#x5165;&#x6808;&#x64CD;&#x4F5C;&#xFF09;&#xFF0C;&#x7B2C;&#x4E09;&#x6B21;&#x78B0;&#x5230;&#x662F;&#x51FA;&#x6808;&#x3002;</p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2020-02-06T03:18:08.000Z" itemprop="datePublished">2020-02-06</time>
+
+    </span>
+    <span class="post-description-item">
+        
+
+    <span>
+        <i class="tags icon"></i>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/树的遍历/">树的遍历</a>
+    </span>
+
+    
+    <span class="ui tiny label">
+        <a href="/tags/非递归算法/">非递归算法</a>
+    </span>
+
+    
+
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>Previous</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/all/using-of-typedef/" class="ui tiny button">
+                    
+                    using of typedef
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#树的遍历总结："><span>树的遍历总结：</span></a><ol><li><a href="#后序遍历非递归算法代码："><span>后序遍历非递归算法代码：</span></a><ol><li><a href="#代码分析"><span>代码分析:</span></a><ol><li><a href="#个人理解："><span>个人理解：</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2020 <a href="/">房云捷</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/js/semantic-ui-algolia.js"></script>
+
+<script src="/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
