@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://mouseofsony.github.io/image/judgetree/scan.JPG">
 <meta property="og:image" content="http://mouseofsony.github.io/image/judgetree/ans1.png">
 <meta property="og:image" content="http://mouseofsony.github.io/image/judgetree/ans2.png">
-<meta property="og:updated_time" content="2020-02-13T08:26:00.245Z">
+<meta property="og:updated_time" content="2020-02-13T08:42:44.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树的同构">
 <meta name="twitter:description" content="#&amp;#x9898;&amp;#x610F;&amp;#xFF1A;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E24;&amp;#x68F5;&amp;#x6811;T1&amp;#x548C;T2&amp;#xFF0C;&amp;#x5982;&amp;#x679C;T1&amp;#x53EF;&amp;#x4EE5;&amp;#x901A;&amp;#x8FC7;&amp;#x82E5;&amp;#x5E72;&amp;#x6B21;&amp;#x5DE6;&amp;#x53F3;&amp;#x5B69;&amp;#x5B50;&amp;#x4E92;&amp;">
@@ -150,24 +150,45 @@
 <p>&#x8F93;&#x5165;&#x6837;&#x4F8B;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
 <p><a class="magnific-img" href="/image/judgetree/scan.JPG"><img src="/image/judgetree/scan.JPG" alt="&#x8F93;&#x5165;&#x6837;&#x4F8B;" class="ui centered image"></a></p>
 <h2 id="&#x6C42;&#x89E3;&#x601D;&#x8DEF;&#xFF1A;"><a href="#&#x6C42;&#x89E3;&#x601D;&#x8DEF;&#xFF1A;" class="headerlink" title="&#x6C42;&#x89E3;&#x601D;&#x8DEF;&#xFF1A;"></a>&#x6C42;&#x89E3;&#x601D;&#x8DEF;&#xFF1A;</h2><p>&#x4E00;&#x3001;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x8868;&#x793A;&#xFF1A;</p>
-<p>&#x8FD9;&#x4E00;&#x9898;&#x4E2D;&#x6211;&#x7528;&#x7684;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x6570;&#x7EC4;&#x6765;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5305;&#x542B;&#x8282;&#x70B9;&#x6570;&#x503C;&#x4E0E;&#x5DE6;&#x53F3;&#x5B69;&#x5B50;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B69;&#x5B50;&#x5219;&#x7F16;&#x53F7;&#x4E3A;-1&#x3002;<br>&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;<br>    struct tree{<br>        int data;<br>        int left;<br>        int right<br>    } Tree1[MAX],Tree2[MAX];</p>
-<p>&#x4E8C;&#x3001;&#x5EFA;&#x7ACB;&#x4E8C;&#x53C9;&#x6811;&#xFF1A;</p>
-<p>&#x6211;&#x7528;&#x4E86;BuildTree()&#x6765;&#x7ECF;&#x884C;&#x5EFA;&#x6811;&#xFF0C;&#x5EFA;&#x6811;&#x8FC7;&#x7A0B;&#x8F83;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x5FAA;&#x73AF;&#x8F93;&#x5165;&#x3002;</p>
+<p>&#x8FD9;&#x4E00;&#x9898;&#x4E2D;&#x6211;&#x7528;&#x7684;&#x662F;&#x7ED3;&#x6784;&#x4F53;&#x6570;&#x7EC4;&#x6765;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x4E2D;&#x5305;&#x542B;&#x8282;&#x70B9;&#x6570;&#x503C;&#x4E0E;&#x5DE6;&#x53F3;&#x5B69;&#x5B50;&#x7F16;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5B69;&#x5B50;&#x5219;&#x7F16;&#x53F7;&#x4E3A;-1&#x3002;<br>&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;</p>
+<pre><code>struct tree{
+    int data;
+    int left;
+    int right
+} Tree1[MAX],Tree2[MAX];</code></pre><p>&#x4E8C;&#x3001;&#x5EFA;&#x7ACB;&#x4E8C;&#x53C9;&#x6811;&#xFF1A;</p>
+<p>&#x6211;&#x7528;&#x4E86;BuildTree()&#x6765;&#x8FDB;&#x884C;&#x5EFA;&#x6811;&#xFF0C;&#x5EFA;&#x6811;&#x8FC7;&#x7A0B;&#x8F83;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x5FAA;&#x73AF;&#x8F93;&#x5165;&#x3002;</p>
 <p>&#x4E09;&#x3001;&#x540C;&#x6784;&#x5224;&#x522B;&#xFF1A;</p>
-<p>&#x5728;&#x5199;&#x540C;&#x6784;&#x5224;&#x522B;&#x7684;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6211;&#x7528;&#x4E86;&#x9012;&#x5F52;&#x7684;&#x601D;&#x60F3;&#x7136;&#x540E;&#x5206;&#x591A;&#x79CD;&#x60C5;&#x51B5;&#x8BA8;&#x8BBA;&#x6765;&#x505A;&#x7684;&#x3002;</p>
-<h3 id="&#x6E90;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x7801;&#xFF1A;"></a>&#x6E90;&#x7801;&#xFF1A;</h3><p>#include&lt;stdio.h&gt;</p>
-<p>#define MAX 10</p>
-<p>#define Null -1</p>
-<p>int HashTable[MAX];</p>
-<p>struct tree{<br>    int data;<br>    int left;<br>    int right<br>} Tree1[MAX],Tree2[MAX];</p>
-<p>void BuildTree(struct tree * Tree,int n)<br>{<br>    int i = 0;</p>
-<pre><code>while(i&lt;n)
+<p>&#x5728;&#x5199;&#x540C;&#x6784;&#x5224;&#x522B;&#x7684;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x6211;&#x7528;&#x4E86;&#x9012;&#x5F52;&#x7684;&#x601D;&#x60F3;&#x7136;&#x540E;&#x5206;&#x591A;&#x79CD;&#x60C5;&#x51B5;&#x8BA8;&#x8BBA;&#x3002;</p>
+<h3 id="&#x6E90;&#x7801;&#xFF1A;"><a href="#&#x6E90;&#x7801;&#xFF1A;" class="headerlink" title="&#x6E90;&#x7801;&#xFF1A;"></a>&#x6E90;&#x7801;&#xFF1A;</h3><pre><code>#include&lt;stdio.h&gt;
+
+#define MAX 10
+#define Null -1
+
+int HashTable[MAX];
+
+struct tree{
+    int data;
+    int left;
+    int right
+} Tree1[MAX],Tree2[MAX];
+
+void BuildTree(struct tree * Tree,int n)
+{    
+int i = 0;
+
+while(i&lt;n)
 {
     scanf(&quot;%d%d%d&quot;,&amp;Tree[i].data,&amp;Tree[i].left,&amp;Tree[i].right);    
     i++;
-}</code></pre><p>}</p>
-<p>int FindRoot(struct tree * Tree,int n)<br>{<br>    int i;<br>    int ans = -1;</p>
-<pre><code>for(i=0;i&lt;n;i++)
+}
+}
+
+int FindRoot(struct tree * Tree,int n)
+{
+int i;
+int ans = -1;
+
+for(i=0;i&lt;n;i++)
 {
     if(Tree[i].left!=-1)
     {
@@ -191,9 +212,15 @@ for(i=0;i&lt;n;i++)
 {
     HashTable[i]=0;
 }
-return ans;</code></pre><p>}</p>
-<p>int JudgeTree(int root1,int root2)<br>{<br>    if((root1==Null)&amp;&amp;(root2==Null))//&#x5982;&#x679C;&#x6839;&#x8282;&#x70B9;&#x90FD;&#x7A7A;&#xFF0C;&#x5219;&#x5FC5;&#x7136;&#x4E3A;&#x540C;&#x6784;<br>    return 1;</p>
-<pre><code>else if((root1==Null)&amp;&amp;(root2!=Null))//&#x5982;&#x679C;&#x6839;&#x8282;&#x70B9;&#x4E00;&#x4E2A;&#x7A7A;&#x4E00;&#x4E2A;&#x4E0D;&#x7A7A;&#xFF0C;&#x5219;&#x5FC5;&#x7136;&#x4E0D;&#x540C;&#x6784; 
+return ans;
+}
+
+int JudgeTree(int root1,int root2)
+{
+if((root1==Null)&amp;&amp;(root2==Null))//&#x5982;&#x679C;&#x6839;&#x8282;&#x70B9;&#x90FD;&#x7A7A;&#xFF0C;&#x5219;&#x5FC5;&#x7136;&#x4E3A;&#x540C;&#x6784; 
+return 1;
+
+else if((root1==Null)&amp;&amp;(root2!=Null))//&#x5982;&#x679C;&#x6839;&#x8282;&#x70B9;&#x4E00;&#x4E2A;&#x7A7A;&#x4E00;&#x4E2A;&#x4E0D;&#x7A7A;&#xFF0C;&#x5219;&#x5FC5;&#x7136;&#x4E0D;&#x540C;&#x6784; 
 return 0;
 
 else if((root1!=Null)&amp;&amp;(root2==Null))//&#x5982;&#x679C;&#x6839;&#x8282;&#x70B9;&#x4E00;&#x4E2A;&#x7A7A;&#x4E00;&#x4E2A;&#x4E0D;&#x7A7A;&#xFF0C;&#x5219;&#x5FC5;&#x7136;&#x4E0D;&#x540C;&#x6784; 
@@ -226,9 +253,16 @@ else if((Tree1[root1].right!=Null)&amp;&amp;(Tree1[root1].left!=Null)&amp;&amp;(
     if(Tree1[Tree1[root1].left].data==Tree2[Tree2[root2].left].data)// &#x5DE6;&#x8FB9;&#x7684;&#x6570;&#x503C;&#x4E00;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x53EA;&#x770B;&#x5DE6;&#x8FB9;&#x548C;&#x5DE6;&#x8FB9;&#x662F;&#x4E0D;&#x662F;&#x540C;&#x6784; 
     return ( JudgeTree(Tree1[root1].left,Tree2[root2].left)&amp;&amp;JudgeTree(Tree1[root1].right,Tree2[root2].right) );
     else return ( JudgeTree(Tree1[root1].left,Tree2[root2].right)&amp;&amp;JudgeTree(Tree1[root1].right,Tree2[root2].left) ); 
-}        </code></pre><p>}</p>
-<p>int main()<br>{<br>    int n;<br>    int root1,root2;<br>    int ans;</p>
-<pre><code>scanf(&quot;%d&quot;,&amp;n);
+}        
+}
+
+int main()
+{
+    int n;
+    int root1,root2;
+    int ans;
+
+scanf(&quot;%d&quot;,&amp;n);
 
 BuildTree(Tree1,n);
 BuildTree(Tree2,n);
@@ -241,8 +275,8 @@ ans = JudgeTree(root1,root2);
 printf(&quot;%d&quot;,ans);
 
 
-return 0;</code></pre><p>}</p>
-<p>&#x6CE8;&#xFF1A;&#x5728;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x6C42;&#x51FA;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;JudgeTree()&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#xFF0C;&#x7ED9;&#x4ED6;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x4ED6;&#x6765;&#x5224;&#x65AD;&#x8FD9;&#x68F5;&#x6811;&#x662F;&#x4E0D;&#x662F;&#x540C;&#x6784;&#x7684;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x4E0B;&#x9762;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F20;&#x8FDB;&#x53BB;&#x7684;&#x53C2;&#x6570;&#x5206;&#x522B;&#x662F;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x4ED6;&#x7684;&#x542B;&#x4E49;&#x540C;&#x6837;&#x662F;&#x5224;&#x65AD;&#x4F20;&#x8FDB;&#x6765;&#x6811;&#x662F;&#x4E0D;&#x662F;&#x540C;&#x6784;&#x3002;&#xFF08;&#x4ED6;&#x662F;&#x901A;&#x8FC7;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x6839;&#x8282;&#x70B9;&#x6765;&#x5224;&#x65AD;&#x8981;&#x5224;&#x65AD;&#x7684;&#x662F;&#x54EA;&#x4E24;&#x68F5;&#x6811;&#xFF09;&#x3002;</p>
+return 0;
+}</code></pre><p>&#x6CE8;&#xFF1A;&#x5728;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5148;&#x6C42;&#x51FA;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;JudgeTree()&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x662F;&#xFF0C;&#x7ED9;&#x4ED6;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x4ED6;&#x6765;&#x5224;&#x65AD;&#x6811;&#x662F;&#x4E0D;&#x662F;&#x540C;&#x6784;&#x7684;&#xFF0C;&#x5728;&#x51FD;&#x6570;&#x4E0B;&#x9762;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F20;&#x8FDB;&#x53BB;&#x7684;&#x53C2;&#x6570;&#x5206;&#x522B;&#x662F;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x4ED6;&#x7684;&#x542B;&#x4E49;&#x540C;&#x6837;&#x662F;&#x5224;&#x65AD;&#x4F20;&#x8FDB;&#x6765;&#x6811;&#x662F;&#x4E0D;&#x662F;&#x540C;&#x6784;&#x3002;&#xFF08;&#x4ED6;&#x662F;&#x901A;&#x8FC7;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x6839;&#x8282;&#x70B9;&#x6765;&#x5224;&#x65AD;&#x8981;&#x5224;&#x65AD;&#x7684;&#x662F;&#x54EA;&#x4E24;&#x68F5;&#x6811;&#xFF09;&#x3002;</p>
 <p>&#x6837;&#x4F8B;&#x56FE;&#x4E2D;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p><a class="magnific-img" href="/image/judgetree/ans1.png"><img src="/image/judgetree/ans1.png" alt="&#x8F93;&#x5165;&#x6837;&#x4F8B;" class="ui centered image"></a></p>
 <p>&#x5F53;&#x6211;&#x4FEE;&#x6539;&#x4E86;E&#x8282;&#x70B9;&#x6570;&#x503C;&#x4E4B;&#x540E;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
