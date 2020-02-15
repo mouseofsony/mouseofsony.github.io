@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"mouseofsony.github.io","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="例题：假定只有四个节点A,B,C,D的二叉树，其前序遍历序列为ABCD，则下面哪个序列是不可能的中序遍历。A、ABCDB、ACDBC、DCBAD、DABC">
-<meta name="keywords" content="数据结构,树的遍历">
+  <meta name="description" content="二叉搜索树的删除：">
+<meta name="keywords" content="二叉搜索树的删除,伪代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构例题">
-<meta property="og:url" content="http://mouseofsony.github.io/数据结构/数据结构例题1/index.html">
+<meta property="og:title" content="二叉搜索树的删除">
+<meta property="og:url" content="http://mouseofsony.github.io/数据结构/二叉搜索树的删除/index.html">
 <meta property="og:site_name" content="sony的小鼠">
-<meta property="og:description" content="例题：假定只有四个节点A,B,C,D的二叉树，其前序遍历序列为ABCD，则下面哪个序列是不可能的中序遍历。A、ABCDB、ACDBC、DCBAD、DABC">
+<meta property="og:description" content="二叉搜索树的删除：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://mouseofsony.github.io/image/qus/ans1.JPG">
-<meta property="og:updated_time" content="2020-02-13T10:42:52.623Z">
+<meta property="og:updated_time" content="2020-02-15T11:15:26.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构例题">
-<meta name="twitter:description" content="例题：假定只有四个节点A,B,C,D的二叉树，其前序遍历序列为ABCD，则下面哪个序列是不可能的中序遍历。A、ABCDB、ACDBC、DCBAD、DABC">
-<meta name="twitter:image" content="http://mouseofsony.github.io/image/qus/ans1.JPG">
+<meta name="twitter:title" content="二叉搜索树的删除">
+<meta name="twitter:description" content="二叉搜索树的删除：">
 
-<link rel="canonical" href="http://mouseofsony.github.io/数据结构/数据结构例题1/">
+<link rel="canonical" href="http://mouseofsony.github.io/数据结构/二叉搜索树的删除/">
 
 
 <script id="page-configurations">
@@ -47,7 +45,7 @@
   };
 </script>
 
-  <title>数据结构例题 | sony的小鼠</title>
+  <title>二叉搜索树的删除 | sony的小鼠</title>
   
 
 
@@ -157,7 +155,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mouseofsony.github.io/数据结构/数据结构例题1/">
+    <link itemprop="mainEntityOfPage" href="http://mouseofsony.github.io/数据结构/二叉搜索树的删除/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/tx.jpg">
@@ -170,7 +168,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据结构例题
+          二叉搜索树的删除
         </h1>
 
         <div class="post-meta">
@@ -179,16 +177,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-02-10 16:16:59" itemprop="dateCreated datePublished" datetime="2020-02-10T16:16:59+08:00">2020-02-10</time>
+              <time title="创建时间：2020-02-15 17:09:52 / 修改时间：19:15:26" itemprop="dateCreated datePublished" datetime="2020-02-15T17:09:52+08:00">2020-02-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-13 18:42:52" itemprop="dateModified" datetime="2020-02-13T18:42:52+08:00">2020-02-13</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -212,13 +204,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h1><p>假定只有四个节点A,B,C,D的二叉树，其前序遍历序列为ABCD，则下面哪个序列是不可能的中序遍历。<br>A、ABCD<br>B、ACDB<br>C、DCBA<br>D、DABC</p>
-<a id="more"></a>
+        <h1 id="二叉搜索树的删除："><a href="#二叉搜索树的删除：" class="headerlink" title="二叉搜索树的删除："></a>二叉搜索树的删除：</h1><a id="more"></a>
 
-<h2 id="解法思路："><a href="#解法思路：" class="headerlink" title="解法思路："></a>解法思路：</h2><p> 根据前序遍历的结果来看，根节点为A。<br> 根据选项中先大概确定树的结构，选项A、B中的树是根节点没有左子树，只有右子树的结构，然后根据此种结构再根据前序遍历的结果大概确定一下几种情况，然后再中序遍历一下这几种情况看是否与答案相吻合。C选项的树是根节点只有左子树的结构，D选项是根节点的左子树只有D节点，右子树有B、C两节点的情况。之后解法与前面说的相同。</p>
-<h3 id="解题过程："><a href="#解题过程：" class="headerlink" title="解题过程："></a>解题过程：</h3><p> <img src="/image/qus/ans1.JPG" alt></p>
-<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>前序遍历顺序：根-&gt;左-&gt;右<br>中序遍历顺序：左-&gt;根-&gt;右</p>
-<p>遍历时如果左子树或右子树也是一颗树的话，则可以将此树分离出来，用相同的办法遍历。</p>
+<p>在进行二叉搜索树元素的删除的时候要注意一个前提，即不影响二叉搜索树的性质。所以在实际删除过程中分为三种情况讨论。</p>
+<p>1、如果要删除的元素是叶节点，则直接删除，再修改其父节点指针–置为NULL。</p>
+<p>2、要删除的节点只有一个孩子节点：将其父节点的指针指向要删除节点的孩子节点。</p>
+<p>3、要删除的节点有左右两棵子树：此时有有两种解法，一种是取右子树中最小的值替代此节点，第二种是取左子树中最大的值来替代。</p>
+<h2 id="伪代码："><a href="#伪代码：" class="headerlink" title="伪代码："></a>伪代码：</h2><pre><code>BinTree FindMin(BinTree BST)//寻找最小值函数
+{
+    if(!BST)
+    return NULL;
+    else if(!BST-&gt;left)//找到最左边
+    return BST;
+    else return FindMin(BST-&gt;left);//沿着左分支继续查找
+}
+
+BinTree Delete(Element X,BinTree BST)//删除函数
+{
+    BinTree Tmp;
+    if(!BST)
+    {
+        printf(&quot;未找到要删除的元素&quot;);
+    }
+    else if(X&lt;BST-&gt;Data)
+    BST-&gt;left = Delete(X,BST-&gt;left);//左子树递归删除
+    else if(X&gt;BST-&gt;Data)
+    BST-&gt;right = Delete(X,BST-&gt;right);//右子树递归删除
+    else//这条分支代表着找到了要删除的节点之后的操作
+    {
+        if(BST-&gt;right &amp;&amp; BST-&gt;left)//被删除的节点有左右两个子节点
+        {
+            Tmp = FindMin(BST-&gt;right);
+            BST-&gt;Data = Tmp-&gt;Data;//取右子树的最小值来代替
+            BST-&gt;right = Delete(Tmp-&gt;Data,BST-&gt;right);//将右子树最小值删除
+        }
+        else //被删除节点有一个或者没有子节点
+        {
+            Tmp = BST;
+            if(!BST-&gt;left)//如果没有左孩子节点或没有孩子节点
+            {
+                BST = BST-&gt;right;
+            }
+            if(!BST-&gt;right)//如果没有右孩子节点或没有孩子节点
+            {
+                BST = BST-&gt;left;
+            }
+            free(Tmp);
+        }
+    }
+        return BST;
+}</code></pre><h3 id="代码的个人理解："><a href="#代码的个人理解：" class="headerlink" title="代码的个人理解："></a>代码的个人理解：</h3><p>首先要明白BinTree Delete(Element X,BinTree BST)函数的具体含义，他的含义是给他一个要删除的元素和根节点，函数实现删除此元素并且返回根节点。<br>所以在比较过程中，如果发现要删除的元素大于根节点，那么删除操作就可以在右子树中进行，具体体现在BST-&gt;right = Delete(X,BST-&gt;right)语句中。我将这种操作类比为接骨操作，右臂断了，那我就去右臂中找到断了的地方并修复（这边就是删除操作），修复之后再将骨头接上。</p>
 
     </div>
 
@@ -228,8 +263,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
-              <a href="/tags/树的遍历/" rel="tag"># 树的遍历</a>
+              <a href="/tags/二叉搜索树的删除/" rel="tag"># 二叉搜索树的删除</a>
+              <a href="/tags/伪代码/" rel="tag"># 伪代码</a>
           </div>
 
         
@@ -238,13 +273,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/算法/蓝桥杯练习题/" rel="prev" title="蓝桥杯练习题">
-      <i class="fa fa-chevron-left"></i> 蓝桥杯练习题
+    <a href="/数据结构/树的同构/" rel="prev" title="树的同构">
+      <i class="fa fa-chevron-left"></i> 树的同构
     </a></div>
-      <div class="post-nav-item">
-    <a href="/数据结构/递归求解二叉树高度小记/" rel="next" title="递归求解二叉树高度小记">
-      递归求解二叉树高度小记 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -304,7 +336,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#例题："><span class="nav-number">1.</span> <span class="nav-text">例题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解法思路："><span class="nav-number">1.1.</span> <span class="nav-text">解法思路：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解题过程："><span class="nav-number">1.1.1.</span> <span class="nav-text">解题过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点："><span class="nav-number">1.1.2.</span> <span class="nav-text">注意点：</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的删除："><span class="nav-number">1.</span> <span class="nav-text">二叉搜索树的删除：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伪代码："><span class="nav-number">1.1.</span> <span class="nav-text">伪代码：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码的个人理解："><span class="nav-number">1.1.1.</span> <span class="nav-text">代码的个人理解：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
