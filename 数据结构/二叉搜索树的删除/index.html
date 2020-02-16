@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="sony的小鼠">
 <meta property="og:description" content="二叉搜索树的删除：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-15T11:15:26.838Z">
+<meta property="og:updated_time" content="2020-02-16T07:50:39.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉搜索树的删除">
 <meta name="twitter:description" content="二叉搜索树的删除：">
@@ -177,10 +177,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-15 17:09:52 / 修改时间：19:15:26" itemprop="dateCreated datePublished" datetime="2020-02-15T17:09:52+08:00">2020-02-15</time>
+              <time title="创建时间：2020-02-15 17:09:52" itemprop="dateCreated datePublished" datetime="2020-02-15T17:09:52+08:00">2020-02-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-16 15:50:39" itemprop="dateModified" datetime="2020-02-16T15:50:39+08:00">2020-02-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -245,15 +251,30 @@ BinTree Delete(Element X,BinTree BST)//删除函数
             {
                 BST = BST-&gt;right;
             }
-            if(!BST-&gt;right)//如果没有右孩子节点或没有孩子节点
+            else if(!BST-&gt;right)//如果没有右孩子节点或没有孩子节点
             {
                 BST = BST-&gt;left;
             }
             free(Tmp);
         }
     }
-        return BST;
+    return BST;
 }</code></pre><h3 id="代码的个人理解："><a href="#代码的个人理解：" class="headerlink" title="代码的个人理解："></a>代码的个人理解：</h3><p>首先要明白BinTree Delete(Element X,BinTree BST)函数的具体含义，他的含义是给他一个要删除的元素和根节点，函数实现删除此元素并且返回根节点。<br>所以在比较过程中，如果发现要删除的元素大于根节点，那么删除操作就可以在右子树中进行，具体体现在BST-&gt;right = Delete(X,BST-&gt;right)语句中。我将这种操作类比为接骨操作，右臂断了，那我就去右臂中找到断了的地方并修复（这边就是删除操作），修复之后再将骨头接上。</p>
+<p>【注】：在被删除节点有一个或无子节点的分支当中，要注意的是</p>
+<pre><code>else //被删除节点有一个或者没有子节点
+        {
+            Tmp = BST;
+            if(!BST-&gt;left)//如果没有左孩子节点或没有孩子节点
+            {
+                BST = BST-&gt;right;
+            }
+            else if(!BST-&gt;right)//如果没有右孩子节点或没有孩子节点
+            {
+                BST = BST-&gt;left;
+            }
+            free(Tmp);
+        }</code></pre><p>else if 不要写成if,要不然就会造成BST被多次赋值，会引起程序崩溃。</p>
+<p>【注】：在关于return应该放到哪里的问题上，其实只要他是最后一个执行的语句就可以，不过严谨起见最好应该放到主函数体当中。</p>
 
     </div>
 
