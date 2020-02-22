@@ -29,7 +29,8 @@
 <meta property="og:description" content="二叉搜索树的比较判别题目描述：对于输入的各种序列，判断是否能生成一样的二叉搜索树：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://mouseofsony.github.io/image/BinTree/example.JPG">
-<meta property="og:updated_time" content="2020-02-22T11:19:05.769Z">
+<meta property="og:image" content="http://mouseofsony.github.io/image/BinTree/ans.png">
+<meta property="og:updated_time" content="2020-02-22T11:21:45.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉搜索树的比较判别">
 <meta name="twitter:description" content="二叉搜索树的比较判别题目描述：对于输入的各种序列，判断是否能生成一样的二叉搜索树：">
@@ -181,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-22 18:49:30 / 修改时间：19:19:05" itemprop="dateCreated datePublished" datetime="2020-02-22T18:49:30+08:00">2020-02-22</time>
+              <time title="创建时间：2020-02-22 18:49:30 / 修改时间：19:21:45" itemprop="dateCreated datePublished" datetime="2020-02-22T18:49:30+08:00">2020-02-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -377,7 +378,8 @@ while(N)
     scanf(&quot;%d&quot;,&amp;N);
 }
 return 0;
-} </code></pre><h3 id="代码个人理解"><a href="#代码个人理解" class="headerlink" title="代码个人理解:"></a>代码个人理解:</h3><p>解决此种问题的关键在于 CheckTree(root,data) 函数，这个函数的功能在于给他一个根节点和一个数，他来检索出这个数是不是在以这个根节点领出来的树中一样的位置。<br>（输入的数字所在的位置是根据之前一连串的数字建树形成，只是这边并没有切实的建树）<br>此函数执行的过程实际上就是将数字再放入一遍树，当遇到root-&gt;flag为0的时候就是这个数字应该摆放的位置，此时只要比较树中节点的值与传进来的数值是否一样便可。</p>
+} </code></pre><h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><p><img src="/image/BinTree/ans.png" alt></p>
+<h4 id="代码个人理解"><a href="#代码个人理解" class="headerlink" title="代码个人理解:"></a>代码个人理解:</h4><p>解决此种问题的关键在于 CheckTree(root,data) 函数，这个函数的功能在于给他一个根节点和一个数，他来检索出这个数是不是在以这个根节点领出来的树中一样的位置。<br>（输入的数字所在的位置是根据之前一连串的数字建树形成，只是这边并没有切实的建树）<br>此函数执行的过程实际上就是将数字再放入一遍树，当遇到root-&gt;flag为0的时候就是这个数字应该摆放的位置，此时只要比较树中节点的值与传进来的数值是否一样便可。</p>
 
     </div>
 
@@ -460,7 +462,7 @@ return 0;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的比较判别"><span class="nav-number">1.</span> <span class="nav-text">二叉搜索树的比较判别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述："><span class="nav-number">1.1.</span> <span class="nav-text">题目描述：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">1.1.1.</span> <span class="nav-text">输入样例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码描述："><span class="nav-number">1.1.1.1.</span> <span class="nav-text">代码描述：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码个人理解"><span class="nav-number">1.1.2.</span> <span class="nav-text">代码个人理解:</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉搜索树的比较判别"><span class="nav-number">1.</span> <span class="nav-text">二叉搜索树的比较判别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述："><span class="nav-number">1.1.</span> <span class="nav-text">题目描述：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">1.1.1.</span> <span class="nav-text">输入样例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码描述："><span class="nav-number">1.1.1.1.</span> <span class="nav-text">代码描述：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果："><span class="nav-number">1.1.2.</span> <span class="nav-text">运行结果：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码个人理解"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">代码个人理解:</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
